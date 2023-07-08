@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        /* Add CSS styles here */
+
+        /* Reset default browser styles */
+        body, h1, h2, h3, p, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+        }
+
+        /* Header section */
+        .home {
+            background-color: #333;
+            padding: 20px;
+        }
+
+        .home .logo {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .home .nav-links {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .home .nav-links li {
+            margin-left: 20px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .home .nav-links li.active {
+            text-decoration: underline;
+        }
+
+        /* Header section */
+        .section-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+
+        .header-container {
+            text-align: center;
+            color: #fff;
+        }
+
+        .header-container h1 {
+            font-size: 48px;
+        }
+
+        .header-container p {
+            margin-top: 20px;
+            color: #f8f8f8;
+        }
+
+        .header-container .more {
+            margin-top: 40px;
+            background-color: #fff;
+            color: #333;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .header-container .more:hover {
+            background-color: #ddd;
+        }
+
+        /* Journey section */
+        .journey {
+            padding: 40px 0;
+            background-color: #f8f8f8;
+        }
+
+        .journey .title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .journey .subtitle {
+            text-align: center;
+            color: #777;
+            margin-bottom: 40px;
+        }
+
+        .journey .journey-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            justify-items: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .journey .card {
+            position: relative;
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .journey .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .journey .card .island-name {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 10px;
+        }
+
+        /* Discount section */
+        .discount-section {
+            background-color: #fff;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .discount-section h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .discount-section p {
+            color: #777;
+            margin-bottom: 40px;
+        }
+
+        .discount-section .b {
+            background-color: #333;
+            color: #fff;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .discount-section .b:hover {
+            background-color: #555;
+        }
+
+        /* Why Choose Us section */
+        .sec-why {
+            background-color: #f8f8f8;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .sec-why h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .sec-why p {
+            color: #777;
+            margin-bottom: 40px;
+        }
+
+        .sec-why .divisons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sec-why .div1 {
+            width: 300px;
+            height: 300px;
+            background-color: #ddd;
+            margin-right: 40px;
+        }
+
+        .sec-why .div2 {
+            text-align: left;
+        }
+
+        .sec-why .div2 h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .sec-why .div2 p {
+            margin-bottom: 20px;
+        }
+
+        /* Footer section */
+        footer {
+            background-color: #333;
+            padding: 40px 0;
+            text-align: center;
+            color: #fff;
+        }
+
+        footer .travel-head {
+            margin-bottom: 20px;
+        }
+
+        footer .travel-head h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        footer .travel-head .icon {
+            margin-top: 20px;
+        }
+
+        footer .travel-head .icon i {
+            color: #fff;
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="home">
+        <nav>
+            <a href="#" class="logo">Travels</a>
+            <ul class="nav-links">
+                <li class="link active">Home</li>
+                <li class="link">Explore</li>
+                <li class="link">Offers</li>
+                <li class="link">Services</li>
+                <li class="link">Contacts</li>
+            </ul>
+        </nav>
+        <header>
+            <div class="section-container">
+                <div class="header-container">
+                    <h1 style="color: white;">Travel</h1>
+                    <p style="color: antiquewhite;">Experience the world's most beautiful destinations and embark on an
+                        unforgettable journey filled with adventure and discovery.</p>
+                    <button class="more">Know More...</button>
+                </div>
+            </div>
+        </header>
+    </div>
+    <divclass="journey">
+        <div class="journey-container">
+            <h2 class="title">Start Your Journey</h2>
+            <p class="subtitle">Explore the most sought-after destinations</p>
+            <div class="journey-grid">
+                <div class="card">
+                    <img src="images/a.jpeg" alt="island">
+                    <div class="island-name">
+                        <span>Santorini</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/b.jpeg" alt="island">
+                    <div class="island-name">
+                        <span>Bora Bora</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/c.jpg" alt="island">
+                    <div class="island-name">
+                        <span>Kauai</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/d.jpg" alt="island">
+                    <div class="island-name">
+                        <span>Bali</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/e.jpg" alt="island">
+                    <div class="island-name">
+                        <span>Ko Samui</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/majorca.jpeg" alt="island">
+                    <div class="island-name">
+                        <span>Majorca</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/boracay.webp" alt="island">
+                    <div class="island-name">
+                        <span>Boracay</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/swaraj dweep.jpeg" alt="island">
+                    <div class="island-name">
+                        <span>Swaraj Dweep</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/capri.jpg" alt="island">
+                    <div class="island-name">
+                        <span>Capri</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="discount-section">
+        <div class="discount-content">
+            <h1>Get Up to 30-35% Discount</h1>
+            <p style="color: #ddd;">Book now and avail exclusive discounts on your dream vacations. Limited time offer!</p>
+            <button class="b">See Tours</button>
+        </div>
+    </div>
+    <div class="sec-why">
+        <h2>Why Choose Us</h2>
+        <p>Experience the joy of traveling and create unforgettable memories with our exceptional services.</p>
+        <div class="divisons">
+            <div class="div1"></div>
+            <div class="div2">
+                <h3>Passionate Travel, Beautiful Places</h3>
+                <p>Fuel your passion for adventure and discover new horizons.</p>
+                <p>Uncover the world's most breathtakingly beautiful places.</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="travel-head">
+            <h2>Travels.co</h2>
+            <div class="icon">  
+                <i class='bx bxl-youtube'></i>
+                <i class='bx bxl-facebook'></i>
+                <i class='bx bxl-twitter'></i>
+                <i class='bx bxl-instagram-alt'></i>
+            </div>
+            <p>"Travel makes one modest. You see what a tiny place you occupy in the world." - Gustave Flaubert</p>
+        </div>
+    </footer>
+</body>
+
+</html>
